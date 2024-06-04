@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-    project     = "my-tftest-project"
+    project     = "tset-10101010"
     region      = "us-central1"
     #credentials = "cred.json"
    
