@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "my-tftest-project-tf-state-prod"
+    bucket  = "my-poc-tfstate"
     prefix  = "terraform/state/"
     #credentials = "cred.json"
   }
