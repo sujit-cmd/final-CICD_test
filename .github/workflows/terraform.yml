@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
-    name: 'Terraform'
+  terrafor-init:
+    name: 'Terraform-initializing'
     runs-on: ubuntu-latest
     environment: production
 
@@ -44,6 +44,22 @@ jobs:
       env:
            GOOGLE_CREDENTIALS: ${{ secrets.GCP_TF_SA_KEY }}
 
+jobs:
+  terrafor-plan:
+    name: 'Terraform-planning'
+    runs-on: ubuntu-latest
+    environment: production
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v3
+    
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
