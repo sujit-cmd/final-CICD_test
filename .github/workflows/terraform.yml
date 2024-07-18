@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   terrafor-init:
-    name: 'Terraform-initializing'
+    name: Terraform-initializing
     runs-on: ubuntu-latest
     environment: production
 
@@ -46,9 +46,10 @@ jobs:
 
 #jobs:
   terraform-plan:
-    name: 'Terraform-planning'
+    name: Terraform-planning
     runs-on: ubuntu-latest
     environment: production
+    needs: Terraform-initializing
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
