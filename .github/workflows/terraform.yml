@@ -44,8 +44,8 @@ jobs:
       env:
            GOOGLE_CREDENTIALS: ${{ secrets.GCP_TF_SA_KEY }}
 
-jobs:
-  terrafor-plan:
+#jobs:
+  terraform-plan:
     name: 'Terraform-planning'
     runs-on: ubuntu-latest
     environment: production
