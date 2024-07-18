@@ -59,3 +59,14 @@ jobs:
       run: terraform apply -auto-approve
       env:
            GOOGLE_CREDENTIALS: ${{ secrets.GCP_TF_SA_KEY }}
+
+    - name: upload artifacts
+    - uses: actions/upload-artifact@v4
+      with:
+        # Name of the artifact to upload.
+        # Optional. Default is 'artifact'
+        name: artifact-file
+
+        # A file, directory or wildcard pattern that describes what to upload
+        # Required.
+        path: uploaded-folder
